@@ -175,11 +175,11 @@ function App() {
 
   const nivelActual = niveles[nivelIndex] || niveles[niveles.length - 1];
 
-  const handleMoveButton = (direction) => {
+  const handleMoveStart = (direction) => {
     setMoveDirection(direction);
   };
 
-  const stopMoveButton = () => {
+  const handleMoveEnd = () => {
     setMoveDirection(null);
   };
 
@@ -280,33 +280,37 @@ function App() {
       <div className="touch-controls">
         <button
           className="touch-button up-button"
-          onMouseDown={() => handleMoveButton('up')}
-          onMouseUp={stopMoveButton}
-          onMouseLeave={stopMoveButton}
+          onTouchStart={() => handleMoveStart('up')}
+          onTouchEnd={handleMoveEnd}
+          onMouseUp={handleMoveEnd} // Para compatibilidad con escritorio
+          onMouseLeave={handleMoveEnd} // Para compatibilidad con escritorio
         >
           Arriba
         </button>
         <button
           className="touch-button left-button"
-          onMouseDown={() => handleMoveButton('left')}
-          onMouseUp={stopMoveButton}
-          onMouseLeave={stopMoveButton}
+          onTouchStart={() => handleMoveStart('left')}
+          onTouchEnd={handleMoveEnd}
+          onMouseUp={handleMoveEnd}
+          onMouseLeave={handleMoveEnd}
         >
           Izquierda
         </button>
         <button
           className="touch-button right-button"
-          onMouseDown={() => handleMoveButton('right')}
-          onMouseUp={stopMoveButton}
-          onMouseLeave={stopMoveButton}
+          onTouchStart={() => handleMoveStart('right')}
+          onTouchEnd={handleMoveEnd}
+          onMouseUp={handleMoveEnd}
+          onMouseLeave={handleMoveEnd}
         >
           Derecha
         </button>
         <button
           className="touch-button down-button"
-          onMouseDown={() => handleMoveButton('down')}
-          onMouseUp={stopMoveButton}
-          onMouseLeave={stopMoveButton}
+          onTouchStart={() => handleMoveStart('down')}
+          onTouchEnd={handleMoveEnd}
+          onMouseUp={handleMoveEnd}
+          onMouseLeave={handleMoveEnd}
         >
           Abajo
         </button>
