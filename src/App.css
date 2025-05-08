@@ -1,0 +1,122 @@
+/* App.css */
+
+/* Hacer que el body no se expanda infinito */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #111; /* Opcional: fondo oscuro elegante */
+  overflow: hidden; /* Evita el scroll innecesario */
+}
+
+/* Ajuste del contenedor principal del Canvas */
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px; /* Tamaño máximo para desktop */
+  width: 100%;
+  height: auto;
+}
+
+/* HUD: interfaz de botones */
+.hud {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Botones */
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00aaff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+/* Mensajes (Colisiones, Ganador, etc.) */
+.message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+/* Controles táctiles */
+.touch-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(2, 50px);
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  z-index: 20; /* Asegura que estén sobre el canvas */
+}
+
+.up-button,
+.down-button,
+.left-button,
+.right-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  user-select: none; /* Evita la selección de texto al tocar */
+  cursor: pointer;
+}
+
+.up-button {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.down-button {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.left-button {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.right-button {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Puedes agregar más estilos aquí para que se parezcan a tu imagen */
+/* Por ejemplo, usando bordes para simular las puntas de las flechas */
+.up-button {
+  /* Ejemplo para la flecha hacia arriba */
+}
+
+.down-button {
+  /* Ejemplo para la flecha hacia abajo */
+}
+
+.left-button {
+  /* Ejemplo para la flecha hacia la izquierda */
+}
+
+.right-button {
+  /* Ejemplo para la flecha hacia la derecha */
+}
